@@ -66,7 +66,10 @@ namespace LiveCharts.Wpf.Components
 
         public override void UpdateFrequency(TimeSpan freq)
         {
-            Timer.Interval = freq;
+            if (Timer != null)
+            {
+                Timer.Interval = freq;
+            }
         }
 
         public void OnTimerOnTick(object sender, EventArgs args)
